@@ -1,0 +1,38 @@
+{
+    "name": "room2",
+    "image": "room2",
+    "bots":[
+    	{
+    		"y": 0,
+    		"x": 4,
+            "user":{
+        		"name": "dj",
+                "item": 3,
+        		"text": {
+        			"type": "bot", 
+        			"text": "error",
+        			"loop": 0,
+        			"loopText": [
+                        "boom",
+                        "boom boom boom",
+                        "boooooooooooooooom"
+                    ]
+        		}
+            }
+    	}
+    ],
+    "disable": [
+        {
+            "x": 0,
+            "y": 0
+        },
+        {
+            "x": 0,
+            "y": 4
+        },
+        {
+            "x": 1,
+            "y": 0
+        }
+    ]
+}

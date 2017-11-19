@@ -1,0 +1,24 @@
+{
+    "name": "room1",
+    "image": "room1",
+    "bots":[
+    	{
+    		"y": 2,
+    		"x": 4,
+    		"user":{
+	    		"name": "Start guide",
+	    		"item": 3,
+        		"text": {
+	    			"type": "bot", 
+	    			"text": "error",
+	    			"loop": 0,
+	    			"loopText": [
+	    				"Ny på mukuduk?",
+	    				"random \nline text\nhahaahhahahaha",
+	    				"enLangText!enLangText!enLangText!enLangText!enLangText!"
+	    			]
+	    		}
+    		}
+    	}
+    ]
+}

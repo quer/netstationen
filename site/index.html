@@ -1,0 +1,132 @@
+<html>
+<head>
+	<title>test</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+	</script>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		#game{
+			float: left;
+		}
+		#menu{
+			float: left;
+			width: 408px;
+			height: 374px;
+			padding: 10px 10px;
+			background-color: #66727E;
+			position: relative;
+		}
+		#menu.header {
+		    border-color: #667D62;
+		    background-color: #A5CDA2;
+		    box-shadow: inset 1px 1px 0px #C4E8B5;
+		    float: left;
+		}
+		.menuItemCount{
+			float: right !important;
+			width: 10% !important;	
+		}
+		#menu #ajaxRoom .menuItem {
+			float: left;
+			width: 90%;	
+		}
+		#postText{
+			opacity:0;
+			filter:alpha(opacity=0);
+			width: 0;
+			overflow: hidden;
+		}
+		#contextmenu{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 70px;
+			height: auto;
+			font-size: 13px;
+			padding: 2px 4px 2px 5px;
+
+		    border: 1px solid #6a7076;
+		    background-color: #d4dfec;
+
+		    -moz-box-shadow: inset 1px 1px 0px #5a3b2b;
+		    -webkit-box-shadow: inset 1px 1px 0px #5a3b2b;
+		    box-shadow: inset 1px 1px 0px #5a3b2b;
+		    display: none;
+		}
+		#contextmenu hr{
+			border-top: 3px solid #6a7076;
+		}
+		#contextmenu table, #contextmenu tr, #contextmenu td{
+			border-top: 0px solid #6a7076;
+			font-size: 13px;
+			padding: 0px;
+			margin: 0px;
+			width: 100%;
+		}
+		#contextmenu tr > td.link:hover{
+			background-color: #737d8c;
+			color: #d4dfec;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="game" width="408" height="374" style="border:1px solid #000000;">
+	</canvas>
+	<div id="menu">
+		<div class="header">
+			Rum
+		</div>
+		<div id="ajaxRoom"></div>
+	</div>
+	<form id="login" method="get">
+		<input type="text" id="username" name="username" value="test">
+		<input type="text" id="password" name="password" value="test">
+		<input type="submit" value="Submit">
+	</form>
+	<form id="postText" method="get">
+		<!--<textarea id="submitText" autofocus></textarea>-->
+		<input type="text" id="submitText">
+		<input type="submit" value="Submit">
+	</form>
+	<h3>all images and copyright go to n.dk / netstation.dk</h3>
+	<div id="log"></div>
+	
+	<img id="room3" src="image/r3.jpg" style="display: none;" />
+	<img id="room2" src="image/r2.jpg" style="display: none;" />
+	<img id="room1" src="image/r1.jpg" style="display: none;" />
+	<img id="item1" src="image/1.png" />
+	<img id="item2" src="image/2.gif" />
+	<img id="item3" src="image/3.gif" />
+	<img id="item4" src="image/4.gif" />
+	<img id="item5" src="image/5.gif" />
+	<img id="root" src="image/root.png" />
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="items.js"></script>
+	<script src="core.js"></script>
+	<div id="contextmenu">
+		<table cellspacing='0' cellpadding='0'>
+			<tr>
+				<td>quer</td>
+			</tr>
+			<tr>
+				<td>room2</td>
+			</tr>
+			<tr>
+				<td>højhus-info</td>
+			</tr>
+			<tr>
+				<td><hr></td>
+			</tr>
+			<tr>
+				<td class="link">humør</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
