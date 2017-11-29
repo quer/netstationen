@@ -68,13 +68,7 @@ module.exports = function (id, roomData, updateRoomListFunction) {
     this.createUserList = function(){
       	var returnUserList = [];
       	for (var i = 0; i < this.slot.length; i++) {
-        	returnUserList[returnUserList.length] = {
-        		x: this.slot[i].x, 
-        		y: this.slot[i].y, 
-    			name: this.slot[i].user.name, 
-    			item: this.slot[i].user.item, 
-    			text: (this.slot[i].user.text ? this.slot[i].user.text.text : null) 
-        	};
+        	returnUserList[returnUserList.length] = this.getUserInSlot(this.slot[i]);
       	}
       	return returnUserList;
     }
@@ -194,5 +188,34 @@ module.exports = function (id, roomData, updateRoomListFunction) {
 			time: new Date().getTime()
 		};
 		this.updateRoom();
+	}
+	this.getUser = function (x, y) {
+		var slotY = this.getYposs(y);
+      	if(slotY === false){
+        	return false;
+      	}
+      	var slotX = this.getXposs(x, slotY);
+		var slot = this.getSlotFromXY(slotX, slotY);
+		return this.getUserInSlot(slot);
+	}
+	this.getSlotFromXY = function (x,y) {
+		for (var i = 0; i < this.slot.length; i++) {
+			if(this.slot[i].x == x && this.slot[i].y == y){
+				return this.slot[i];
+			}
+		}
+		return null;
+	}
+	this.getUserInSlot = function (slot) {
+		if(slot != null){
+			return {
+	    		x: slot.x, 
+	    		y: slot.y, 
+				name: slot.user.name, 
+				item: slot.user.item, 
+				text: (slot.user.text ? slot.user.text.text : null) 
+	    	};
+    	}
+    	return null;
 	}
 }

@@ -247,7 +247,7 @@ jQuery(function($) {
 	}
 	function updateContextMenu(data) {
 		//console.log("data"+ data);
-		if (data !== false) {
+		if (data !== null) {
 			var possRoot = getPoss(data);
 			var div = $("#contextmenu");
 			div.css( "display", "block" );

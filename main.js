@@ -50,10 +50,14 @@ io.sockets.on('connection', function (socket) {
 	socket.on('moveRoom', function (roomName, callback){
 		RoomsController.moveUserToRoom(roomName, userObj);
 	});
+	socket.on('get user', function (x, y, callback) {
+		var user = userObj.room.getUser(x, y);
+		callback(user);
+	})
 });
 var tick = 0;
 var theLoop = setInterval(function () {
-	console.log("loop", tick);
+	//console.log("loop", tick);
   	RoomsController.update(tick);
   	++tick;
 }, 2000);
